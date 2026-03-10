@@ -1,47 +1,26 @@
-# Full Pipeline Example: INVEST+CRPG+CoT+ReAct
+# Full Pipeline Example: CoT + ReAct
 
 ## Task
-Build a complete image classification system for a custom dataset.
 
-## Complete Workflow
+Build a complete image classification system for a retail company to classify product images into 20 categories for automated inventory management.
 
-### 1. INVEST User Story
+## Requirements
 
-```markdown
-As a retail company data scientist
-I want to classify product images into 20 categories
-So that I can automate inventory management
-```
-
-### 2. CRPG Framework
-
-```markdown
-## CONSTRAINTS
 - 10,000 labeled images available
 - Must run on 8GB GPU
 - Inference time < 100ms
 - 95% accuracy required
 
-## REWARDS
-- High accuracy on imbalanced classes
-- Fast training time (<4 hours)
-- Model interpretability
-- Easy deployment
+## Deliverables
 
-## PENALTIES
-- Overfitting on small dataset
-- Memory overflow
-- Slow inference
-- Poor performance on rare classes
-
-## GOAL STATE
 - Trained model with >95% validation accuracy
 - Docker container for deployment
 - API endpoint for predictions
 - Documentation and tests
-```
 
-### 3. Chain of Thought Planning
+## Complete Workflow
+
+### 1. Chain of Thought Planning
 
 ```markdown
 Let me plan the complete pipeline:
@@ -76,7 +55,7 @@ Let me plan the complete pipeline:
 - Include health checks and monitoring
 ```
 
-### 4. ReAct Implementation
+### 2. ReAct Implementation
 
 ```markdown
 ### Phase 1: Data Preparation
@@ -279,10 +258,9 @@ print(response.json())  # {'class': 'electronics', 'confidence': 0.98}
 - ✓ Complete documentation and tests
 
 ### Key Success Factors
-1. **INVEST**: Clear requirements from the start
-2. **CRPG**: Optimization targets guided decisions
-3. **CoT**: Systematic planning prevented issues
-4. **ReAct**: Iterative implementation with validation
+1. **Clear requirements**: Well-defined targets from the start
+2. **CoT**: Systematic planning prevented issues
+3. **ReAct**: Iterative implementation with validation
 
 ### Lessons Learned
 - Transfer learning essential for small datasets

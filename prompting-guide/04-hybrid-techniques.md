@@ -1,44 +1,41 @@
-# Hybrid Techniques: Combining All Approaches
+# Hybrid Prompting Techniques
 
 ## Overview
 
-The real power emerges when we combine INVEST+CRPG with Chain of Thought reasoning and ReAct's action capabilities. This creates a comprehensive framework for solving complex ML problems.
+The real power emerges when we combine Chain of Thought reasoning with ReAct's action capabilities. This creates a comprehensive framework for solving complex ML problems.
 
 ## The Complete Stack
 
 ```mermaid
 graph TB
-    A[User Request] --> B[INVEST Story]
-    B --> C[CoT Reasoning]
-    C --> D[ReAct Loop]
-    D --> E{Meets CRPG?}
-    E -->|No| F[Refine Approach]
-    F --> C
-    E -->|Yes| G[Solution]
+    A[User Request] --> B[CoT Reasoning]
+    B --> C[ReAct Loop]
+    C --> D{Meets Requirements?}
+    D -->|No| E[Refine Approach]
+    E --> B
+    D -->|Yes| F[Solution]
 
-    style B fill:#f3e5f5
-    style C fill:#e8f5e9
-    style D fill:#fff3e0
-    style E fill:#fce4ec
+    style B fill:#e8f5e9
+    style C fill:#fff3e0
+    style D fill:#fce4ec
 ```
 
 ## Human Analogy
 
 Think of this as a complete problem-solving session with a skilled team:
-1. **Project Manager** (INVEST): Defines clear requirements
+1. **Requirements Analyst**: Defines clear requirements
 2. **Technical Lead** (CoT): Plans the approach step-by-step
 3. **Engineers** (ReAct): Execute, test, and iterate
-4. **Quality Assurance** (CRPG): Ensures standards are met
+4. **Quality Assurance**: Ensures standards are met
 
 ## Hybrid Pattern Examples
 
 ### Pattern 1: Full Stack Implementation
 
 ```markdown
-## User Story (INVEST)
-As a researcher
-I want to implement a state-of-the-art NLP model
-So that I can process customer feedback efficiently
+## Task
+As a researcher, implement a state-of-the-art NLP model
+to process customer feedback efficiently.
 
 ## Chain of Thought Planning
 Let me break this down:
@@ -66,11 +63,11 @@ Let me break this down:
 **Action**: Implement training pipeline
 **Observation**: Training loss decreasing, validation stable
 
-## CRPG Validation
-✓ Constraint: Fits in 8GB GPU memory
-✓ Reward: 92% accuracy achieved
-✓ Penalty Avoided: No overfitting detected
-✓ Goal State: Production-ready model delivered
+## Validation
+- Constraint: Fits in 8GB GPU memory
+- Target: 92% accuracy achieved
+- No overfitting detected
+- Production-ready model delivered
 ```
 
 ### Pattern 2: Iterative Optimization
@@ -85,13 +82,13 @@ Build the fastest possible inference pipeline for ResNet50
 **CoT**: Start with standard PyTorch implementation
 **Action**: Benchmark baseline model
 **Observation**: 45ms per image
-**CRPG Check**: Not meeting <20ms target (reward)
+**Check**: Not meeting <20ms target
 
 ### Round 2: Optimization
 **CoT**: Try TorchScript compilation
 **Action**: Convert model to TorchScript
 **Observation**: 32ms per image
-**CRPG Check**: Better but still not meeting target
+**Check**: Better but still not meeting target
 
 ### Round 3: Advanced Optimization
 **CoT**: Combine multiple techniques:
@@ -109,12 +106,12 @@ Build the fastest possible inference pipeline for ResNet50
 - Quantized: 18ms
 - Batched: 12ms amortized
 
-**CRPG Check**: ✓ Meeting all criteria
+**Check**: Meeting all criteria
 ```
 
 ## Advanced Hybrid Patterns
 
-### Self-Consistency with CRPG
+### Self-Consistency
 
 ```markdown
 ## Task: Robust Model Selection
@@ -136,9 +133,9 @@ Build the fastest possible inference pipeline for ResNet50
 **Action**: Test ConvNeXt-Tiny
 **Result**: 95% accuracy, 20ms inference
 
-### CRPG Evaluation
-Constraints: <25ms inference ✓ (Solutions 2,3)
-Rewards: >93% accuracy ✓ (All solutions)
+### Evaluation
+Constraints: <25ms inference (Solutions 2,3)
+Targets: >93% accuracy (All solutions)
 Best choice: ConvNeXt-Tiny (best accuracy within constraints)
 ```
 
@@ -176,28 +173,28 @@ Best choice: ConvNeXt-Tiny (best accuracy within constraints)
 
 ```markdown
 ## Stage 1: Data Preparation
-**INVEST**: Prepare ImageNet subset
+**Task**: Prepare ImageNet subset
 **CoT**: Need balanced classes, proper splits
 **ReAct**: Download, filter, split data
 **Output**: Ready dataset
 
 ## Stage 2: Architecture Design
 **Input**: Dataset specs from Stage 1
-**INVEST**: Design efficient architecture
+**Task**: Design efficient architecture
 **CoT**: Analyze compute/accuracy tradeoffs
 **ReAct**: Prototype and benchmark options
 **Output**: Optimized model architecture
 
 ## Stage 3: Training Pipeline
 **Input**: Data + Architecture
-**INVEST**: Implement distributed training
+**Task**: Implement distributed training
 **CoT**: Plan scaling strategy
 **ReAct**: Setup multi-GPU training
 **Output**: Trained model
 
 ## Stage 4: Deployment
 **Input**: Trained model
-**INVEST**: Create inference service
+**Task**: Create inference service
 **CoT**: Design API and optimization
 **ReAct**: Deploy and monitor
 **Output**: Production service
@@ -219,22 +216,22 @@ Requirements:
 ## Hybrid Analysis
 
 **CoT Reasoning**:
-- Real-time → Need optimization focus
-- Limited data → Transfer learning essential
-- High accuracy → Strong architecture needed
+- Real-time -> Need optimization focus
+- Limited data -> Transfer learning essential
+- High accuracy -> Strong architecture needed
 
 **ReAct Investigation**:
 - Action: Survey available pretrained models
 - Action: Benchmark inference speeds
 - Action: Test few-shot performance
 
-**CRPG Optimization**:
+**Requirements Check**:
 - Constraint: <50ms latency
-- Reward: >95% accuracy
-- Penalty: Overfitting on small data
+- Target: >95% accuracy
+- Risk: Overfitting on small data
 
 **Recommendation**:
-Use INVEST+CRPG+ReAct pattern with:
+Use CoT+ReAct pattern with:
 - Pretrained transformer
 - Few-shot learning
 - ONNX optimization
@@ -246,9 +243,9 @@ Use INVEST+CRPG+ReAct pattern with:
 
 ```mermaid
 graph LR
-    A[Requirements<br/>INVEST] --> B[Planning<br/>CoT]
+    A[Requirements] --> B[Planning<br/>CoT]
     B --> C[Experimentation<br/>ReAct]
-    C --> D{Validation<br/>CRPG}
+    C --> D{Validation}
     D -->|Pass| E[Deploy]
     D -->|Fail| F[Refine<br/>CoT]
     F --> C
@@ -257,8 +254,8 @@ graph LR
 ### Daily Development Pattern
 
 ```markdown
-Morning Planning (INVEST + CoT):
-- Review user stories
+Morning Planning (CoT):
+- Review task requirements
 - Think through approach
 - Identify potential issues
 
@@ -267,10 +264,10 @@ Development (ReAct):
 - Test hypotheses
 - Gather metrics
 
-Evening Review (CRPG):
-- Check against constraints
-- Measure rewards achieved
-- Document penalties avoided
+Evening Review:
+- Check against requirements
+- Measure targets achieved
+- Document risks avoided
 ```
 
 ## Benefits of Hybrid Approach
@@ -284,20 +281,20 @@ Evening Review (CRPG):
 ## Human Parallel
 
 Like a well-functioning R&D team:
-- Clear project goals (INVEST)
+- Clear project goals (Requirements)
 - Technical planning sessions (CoT)
 - Hands-on experimentation (ReAct)
-- Quality gates (CRPG)
+- Quality gates (Validation)
 - Iterative refinement (Hybrid loops)
 
 ## Key Success Factors
 
-1. **Start with clear requirements** (INVEST)
+1. **Start with clear requirements**
 2. **Think before acting** (CoT before ReAct)
-3. **Validate continuously** (CRPG checks)
+3. **Validate continuously**
 4. **Iterate based on evidence** (ReAct observations)
 5. **Document the journey** (All techniques together)
 
 ## Next Steps
 
-Now let's explore the [path to prompt-free PyTorch development](05-pytorch-automation.md) →
+Now let's explore the [path to prompt-free PyTorch development](05-pytorch-automation.md) ->

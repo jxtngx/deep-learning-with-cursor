@@ -2,36 +2,26 @@
 
 # Full Fine-tuning (PyTorch Native)
 
-**User Story:**
-As a machine learning engineer
-I want to fine-tune all parameters of a pre-trained model
-So that I can maximize task-specific performance with sufficient compute resources
+I need to implement full fine-tuning of a pre-trained [model type] using native PyTorch. Starting from [checkpoint/weights], the model should be adapted for [task description] with [dataset size] labeled examples. Training should complete within [hours] on [GPU type] while achieving [metric] > [target]. Please build the complete pipeline including model loading, layer freezing strategies, learning rate scheduling with warmup, early stopping, and comprehensive evaluation metrics.
 
-**Prompt:**
-"I need to implement full fine-tuning of a pre-trained [model type] using native PyTorch. Starting from [checkpoint/weights], the model should be adapted for [task description] with [dataset size] labeled examples. Training should complete within [hours] on [GPU type] while achieving [metric] > [target]. Please build the complete pipeline including model loading, layer freezing strategies, learning rate scheduling with warmup, early stopping, and comprehensive evaluation metrics."
+## Requirements
 
-## CONSTRAINTS
 - Base model: [model name and size]
 - Dataset: [size] samples with [classes/labels]
 - Hardware: [GPU memory] available
 - Training time: [hours] maximum
 - Batch size: [range based on memory]
 
-## REWARDS
+## Success Criteria
+
 - Achieve target performance metric
 - Gradual unfreezing strategy
 - Discriminative learning rates
 - Validation-based checkpointing
 - Confusion matrix and error analysis
 
-## PENALTIES
-- Catastrophic forgetting of pre-trained knowledge
-- Overfitting to small datasets
-- No learning rate decay
-- Missing baseline comparisons
-- Uniform learning rates across layers
+## Deliverables
 
-## GOAL STATE
 - Fine-tuned model weights
 - Training history plots
 - Performance metrics report

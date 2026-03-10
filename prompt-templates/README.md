@@ -4,15 +4,14 @@
 
 ## Overview
 
-This directory contains ready-to-use prompt templates for common machine learning tasks. These templates are designed to work with the specialized agents in this PyTorch ML project, providing structured requests that include constraints, rewards, and clear goal states.
+This directory contains ready-to-use prompt templates for common machine learning tasks. These templates are designed to work with the specialized agents in this PyTorch ML project, providing structured requests with clear requirements, success criteria, and deliverables.
 
 ## How to Use
 
 1. **Browse** the template files to find a task matching your needs
-2. **Copy** the entire prompt text from the relevant section
-3. **Paste** into your conversation with Claude Code
-4. **Customize** the specific parameters to match your requirements
-5. **Submit** to trigger the appropriate agent workflow
+2. **Copy** the task description from the relevant template
+3. **Customize** the requirements and success criteria to match your project
+4. **Submit** to trigger the appropriate agent workflow
 
 ## Template Categories
 
@@ -73,71 +72,44 @@ This directory contains ready-to-use prompt templates for common machine learnin
 
 ## Template Structure
 
-Each template follows a consistent structure combining agile methodologies with AI optimization:
-
-### INVEST User Stories
-Templates begin with user stories following the agile INVEST principles:
-- **Independent**: Self-contained requirements
-- **Negotiable**: Flexible implementation approach
-- **Valuable**: Clear benefit to stakeholder
-- **Estimable**: Defined scope and complexity
-- **Small**: Achievable in reasonable timeframe
-- **Testable**: Measurable success criteria
-
-### CRPG Optimization Framework
-Following the user story, each template includes a custom CRPG framework that guides AI agent behavior:
+Each template follows a consistent three-section structure:
 
 ```markdown
-**User Story:** (INVEST format)
-As a [role]
-I want to [goal]
-So that [benefit]
+# [Task Name]
 
-**Prompt:**
-"[Detailed task description with specific requirements]"
+[Task description with specific requirements]
 
-### CONSTRAINTS
-- Technical limitations and requirements
-- Resource boundaries (GPU, memory, time)
-- Compatibility requirements
+## Requirements
+- Technical limitations and resource boundaries
+- Compatibility and framework requirements
 
-### REWARDS
-- Success metrics and targets
-- Performance goals
-- Quality indicators
+## Success Criteria
+- Performance targets and quality indicators
+- Measurable goals
 
-### PENALTIES
-- Anti-patterns to avoid
-- Common pitfalls
-- Quality deductions
-
-### GOAL STATE
-- Expected deliverables
-- Success criteria
+## Deliverables
+- Expected outputs and artifacts
 - Validation methods
 ```
-
-This dual format ensures agents receive both high-level intent (INVEST) and specific optimization parameters (CRPG) for optimal task execution.
 
 ## Customization Guide
 
 When adapting templates:
 
-1. **Keep the structure**: Maintain constraints/rewards/penalties format
-2. **Be specific**: Replace placeholder values with actual requirements
-3. **Set realistic targets**: Adjust performance metrics to your hardware
-4. **Include your data**: Specify your dataset or provide sample data
-5. **Define success**: Clear metrics help agents optimize correctly
+1. **Be specific**: Replace placeholder values with actual requirements
+2. **Set realistic targets**: Adjust performance metrics to your hardware
+3. **Include your data**: Specify your dataset or provide sample data
+4. **Define success**: Clear metrics help agents optimize correctly
 
 ## Agent Routing
 
 Templates automatically route to appropriate agents:
 
-- **@agent-InterfaceDesigner**: For UI/UX tasks
-- **@agent-TestArchitect**: For TDD workflows
 - **@agent-NetworkArchitect**: For custom model architectures
+- **@agent-TestArchitect**: For TDD workflows
 - **@agent-DatasetCurator**: For dataset selection
 - **@agent-TrainingOrchestrator**: For training pipelines
+- **@agent-InterfaceDesigner**: For UI/UX tasks
 
 Agents not explicitly mentioned are selected automatically based on task requirements.
 
@@ -151,26 +123,25 @@ Agents not explicitly mentioned are selected automatically based on task require
 - Set clear success criteria
 
 ### DON'T:
-- Remove constraints section (agents need boundaries)
-- Skip rewards/penalties (they guide optimization)
 - Use vague requirements ("make it fast")
 - Combine unrelated tasks in one prompt
-- Ignore the user story format
+- Omit hardware or resource constraints
+- Skip success criteria
 
 ## Examples
 
 ### Quick Start: Image Classification
 ```bash
-# 1. Copy prompt from vision-prompts.md
+# 1. Copy prompt from vision-prompts/image-classification.md
 # 2. Replace "ImageNet-1K or CIFAR-10" with your dataset
 # 3. Adjust "8 GPU hours" to your budget
-# 4. Submit to Claude Code
+# 4. Submit to Cursor
 ```
 
 ### Test-First Development
 ```bash
-# 1. Start with test-prompts.md template
-# 2. Let TestArchitect write tests first
+# 1. Start with a test-prompts/ template
+# 2. Let Test Developer write tests first
 # 3. Then use vision/nlp/multimodal prompts for implementation
 # 4. Ensure all tests pass before deployment
 ```
@@ -179,13 +150,12 @@ Agents not explicitly mentioned are selected automatically based on task require
 
 Common workflows:
 
-1. **Full Pipeline**: Test → Data → Model → Training → Deployment
-2. **Research**: Data exploration → Model experimentation → Metrics
-3. **Production**: Model optimization → API → Interface → Testing
-4. **Iteration**: Metrics analysis → Model refinement → A/B testing
+1. **Full Pipeline**: Test -> Data -> Model -> Training -> Deployment
+2. **Research**: Data exploration -> Model experimentation -> Metrics
+3. **Production**: Model optimization -> API -> Interface -> Testing
+4. **Iteration**: Metrics analysis -> Model refinement -> A/B testing
 
 ## Support
 
-- Review CLAUDE.md for agent capabilities
-- Check .claude/agents/ for detailed agent documentation
-- Consult team.md for agent coordination patterns
+- Review `.cursor/agents/chief-architect.md` for team overview and agent capabilities
+- Check `.cursor/agents/` for detailed agent documentation

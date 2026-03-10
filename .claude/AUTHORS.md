@@ -7,7 +7,6 @@
 ### Core Contributions
 
 - **Agent Architecture Design**: Created the multi-agent system for collaborative ML development
-- **INVEST/CRPG Methodology**: Developed the structured requirements framework combining agile user stories with AI optimization parameters
 - **Prompt Template Framework**: Designed comprehensive prompt templates for vision, NLP, multimodal, pre-training, and fine-tuning tasks
 - **Modular PyTorch Architecture**: Established the non-package module structure for simplified deployment
 - **AWS Integration Patterns**: Developed cloud-native patterns for EC2, S3, SageMaker, and Bedrock

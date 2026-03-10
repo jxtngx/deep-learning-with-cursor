@@ -1,0 +1,37 @@
+---
+description: Python code quality standards from pyproject.toml
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Python Code Quality
+
+All Python code must pass the project's quality tools:
+
+## Required Tools
+
+| Tool | Purpose |
+|------|---------|
+| `black` | Code formatting |
+| `isort` | Import sorting |
+| `flake8` | Style linting |
+| `mypy` | Type checking |
+| `ruff` | Fast linting |
+| `bandit` | Security scanning |
+
+## Before Committing
+
+```bash
+black .
+isort .
+ruff check --fix .
+mypy src/
+bandit -r src/
+```
+
+## Standards
+
+- Type hints on all public functions
+- Docstrings on all public modules, classes, functions
+- No `# type: ignore` without justification
+- No security warnings from bandit

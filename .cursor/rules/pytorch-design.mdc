@@ -1,0 +1,32 @@
+---
+description: Follow PyTorch design philosophy for code implementations
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# PyTorch Design Philosophy
+
+Code implementations should follow PyTorch's design principles:
+
+## Core Principles
+
+1. **Usability over performance**: Prioritize clear, intuitive APIs
+2. **Simple over easy**: Explicit is better than magic
+3. **Python first**: Leverage Python idioms, not fight them
+4. **Hackable**: Users should be able to extend and modify
+5. **Worse is better**: Simple implementations that work beat complex ones that don't
+
+## Patterns
+
+- **Flat hierarchies**: Avoid deep inheritance chains
+- **Composition over inheritance**: Prefer combining simple components
+- **Sensible defaults**: Work out of the box, configurable when needed
+- **Fail fast**: Raise clear errors early, not cryptic ones late
+- **Minimal abstractions**: Only abstract when there's clear benefit
+
+## Anti-Patterns
+
+- Over-engineered class hierarchies
+- Hidden global state
+- Implicit behavior that surprises users
+- Premature optimization

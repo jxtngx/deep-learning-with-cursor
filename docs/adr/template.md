@@ -28,7 +28,7 @@
 - [Side effect 2]
 
 ## Compliance
-[How does this align with our agile practices and INVEST principles?]
+[How does this align with our agile practices?]
 
 ## References
 - [Link to relevant documentation]

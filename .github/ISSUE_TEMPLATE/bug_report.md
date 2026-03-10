@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a defect using INVEST user story format
+about: Report a defect
 title: ''
 labels: 'bug'
 assignees: ''
@@ -9,7 +9,7 @@ assignees: ''
 
 <!-- Copyright 2025 jxtngx | Apache 2.0 License | https://github.com/jxtngx/claude-code-pytorch -->
 
-## User Story (INVEST Format)
+## User Story
 
 **As a** [role: researcher/developer/user]
 **I want to** [fix the specific defect]

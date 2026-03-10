@@ -1,11 +1,11 @@
-# Deep Learning with Claude
+# Deep Learning with Cursor
 
 [![Author](https://img.shields.io/badge/author-jxtngx-blue)](https://github.com/jxtngx)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-A modular, multi-agent based system for PyTorch, Hugging Face, and AWS, powered by Anthropic's Claude family of models.
+A modular, multi-agent based system for PyTorch, Hugging Face, and AWS, powered by Cursor's AI-assisted development.
 
-> **Note**: This project is compatible with GitHub Copilot through `.github/copilot-instructions.md`, which references the same agent architecture defined in `CLAUDE.md`.
+> **Note**: This project uses specialized agent definitions in `.cursor/agents/` coordinated by the Chief Fullstack Architect.
 
 ## Philosophy
 
@@ -43,39 +43,14 @@ The multi-agent architecture here provides hands-on experience with patterns dir
 By working with this template's agent team, you're learning:
 - Agent coordination patterns (supervisor/worker models)
 - Tool use and function calling (ReAct patterns)
-- Structured prompting (INVEST+CRPG framework)
 - Multi-agent orchestration (parallel and sequential workflows)
 
 These skills transfer directly to building production agent applications, making this template both a PyTorch learning tool and an introduction to the agentic AI ecosystem.
 
-## Structured Requirements Format
-
-This project uses a disciplined approach to requirements specification:
-
-### INVEST User Stories
-All agent tasks and prompt templates follow the agile INVEST criteria
-
-- **Independent** - Each story stands alone
-- **Negotiable** - Flexible implementation details
-- **Valuable** - Clear business or research value
-- **Estimable** - Measurable scope and effort
-- **Small** - Completable in reasonable time
-- **Testable** - Verifiable success criteria
-
-### CRPG Optimization Framework
-A custom format using Reinforcement Learning language guides AI agent optimization
-
-- **Constraints** - Technical boundaries and limitations
-- **Rewards** - Success metrics and performance targets
-- **Penalties** - Anti-patterns and quality deductions
-- **Goal State** - Clear deliverables and validation criteria
-
-This structured approach ensures agents understand both the "what" (user story) and the "how" (optimization parameters) of each task.
-
 ## Getting Started
 
-1. **Define Your Project**: Consult `CLAUDE.md` to engage the Supervisor
-2. **Select Your Team**: Claude routes to appropriate specialist agents
+1. **Define Your Project**: Consult the Chief Architect to engage the appropriate agents
+2. **Select Your Team**: The agent router directs to appropriate specialist agents
 3. **Iterate and Build**: Agents collaborate to implement your solution
 
 ## Architecture
@@ -207,12 +182,11 @@ Each agent operates as an expert consultant, providing:
 - **PyTorch 2.3+**: Core deep learning framework
 - **Hugging Face**: Model and dataset ecosystem
 - **AWS**: Cloud infrastructure and services
-- **Claude Code**: AI-powered development assistance
+- **Cursor**: AI-powered development assistance
 
 ## Repository Structure
 
-- `.claude/agents/`: Specialized agent definitions
-- `CLAUDE.md`: Agent routing and coordination
+- `.cursor/agents/`: Specialized agent definitions
 - `docs/`: Documentation and agile artifacts
   - `adr/`: Architecture Decision Records
   - `sprints/`: Sprint planning and tracking
@@ -243,13 +217,13 @@ uv pip install -e ".[dev]"
 pre-commit install
 ```
 
-## Using Claude Code Agents
+## Using Cursor Agents
 
-> View all available agents and their capabilities in [.claude/team.md](.claude/team.md)
+> View all available agents and their capabilities in [.cursor/agents/chief-architect.md](.cursor/agents/chief-architect.md)
 
 ### Basic Agent Invocation
 
-In the Claude Code terminal, you can directly invoke specialized agents using `@agent-[NAME]` or let Claude automatically route your request to the appropriate expert.
+In Cursor, you can directly invoke specialized agents using `@agent-[NAME]` or let the agent router automatically direct your request to the appropriate expert.
 
 #### Direct Agent Routing
 ```bash
@@ -262,10 +236,10 @@ NetworkArchitect: I'll design a custom spatio-temporal attention module...
 
 #### Automatic Routing
 ```bash
-# Describe your task and Claude routes to appropriate agents
+# Describe your task and the router directs to appropriate agents
 $ "I need to fine-tune a BERT model on my custom dataset with limited GPU memory"
 
-# Claude automatically engages relevant agents
+# The agent system automatically engages relevant agents
 Supervisor: Let me establish your constraints...
 TestArchitect: Writing tests for your fine-tuning pipeline...
 ModelArchitect: Selecting optimal BERT variant for your memory constraints...
@@ -344,7 +318,7 @@ InterfaceDesigner: Creating monitoring dashboard...
 3. **Use Templates**: Copy prompts from `prompt-templates/` for consistency
 4. **Test First**: Let TestArchitect write tests before implementation
 5. **Local First**: Use LocalStackEmulator before AWS deployment
-6. **Trust Routing**: Claude knows which agents to engage when not specified
+6. **Trust Routing**: The agent system knows which agents to engage when not specified
 
 ### Agent Coordination Patterns
 
@@ -383,11 +357,11 @@ This template provides the foundation for any ML project, from research prototyp
 If you use this project in your research or work, please cite:
 
 ```bibtex
-@software{claude_code_pytorch,
+@software{deep_learning_with_cursor,
   author = {jxtngx},
-  title = {Claude Code PyTorch: Multi-Agent ML Development Framework},
+  title = {Deep Learning with Cursor: Multi-Agent ML Development Framework},
   year = {2025},
-  url = {https://github.com/jxtngx/claude-code-pytorch},
+  url = {https://github.com/jxtngx/deep-learning-with-cursor},
   license = {Apache-2.0}
 }
 ```

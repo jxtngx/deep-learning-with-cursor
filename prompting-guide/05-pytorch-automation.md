@@ -252,27 +252,6 @@ class AgentMemory:
         return self.memory.find_similar(new_context)
 ```
 
-## The Role of INVEST+CRPG in Automation
-
-### Structured Foundation
-
-INVEST+CRPG provides the structure that enables automation:
-
-1. **Predictable Format**: Machines can parse structured input
-2. **Clear Objectives**: Automated systems know what success looks like
-3. **Bounded Search**: Constraints limit the solution space
-4. **Optimization Targets**: Rewards guide automated decisions
-
-### Evolution Path
-
-```markdown
-Manual INVEST+CRPG →
-Templated INVEST+CRPG →
-Auto-generated INVEST+CRPG →
-Implicit INVEST+CRPG →
-Natural Language
-```
-
 ## Future Capabilities
 
 ### Predictive Development
@@ -322,7 +301,7 @@ The evolution is like hiring progressively more experienced developers:
 ### Phase 1: Foundation (Current)
 - Standardized templates
 - Agent specialization
-- INVEST+CRPG framework
+- Structured prompting practices
 
 ### Phase 2: Intelligence (Next)
 - Pattern recognition
@@ -346,7 +325,7 @@ Start building toward automation by:
 
 ## Conclusion
 
-The path to prompt-free PyTorch development is not about replacing MLE creativity but augmenting it. By building on INVEST+CRPG foundations with advanced prompting techniques, we're creating a future where the barrier between idea and implementation disappears.
+The path to prompt-free PyTorch development is not about replacing MLE creativity but augmenting it. By building on structured prompting foundations with clear requirements, we're creating a future where the barrier between idea and implementation disappears.
 
 The goal: Think it, describe it, have it built.
 

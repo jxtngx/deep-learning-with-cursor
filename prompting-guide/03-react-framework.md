@@ -49,17 +49,10 @@ Processing results from actions:
 - "Test accuracy is 20% lower than training"
 - "Memory usage peaks at 15GB"
 
-## ReAct with INVEST+CRPG
-
-### Integration Pattern
+## ReAct in Practice: Model Selection
 
 ```markdown
-## User Story (INVEST)
-As a ML engineer
-I want to find the best pretrained model for my task
-So that I can minimize training time
-
-## ReAct Execution
+## Task: Find the best pretrained model for a classification task while minimizing training time
 
 **Thought 1**: I need to identify suitable models on HuggingFace
 **Action 1**: Search HuggingFace for models trained on similar data
@@ -245,30 +238,6 @@ This is more powerful than pure reasoning because it grounds decisions in actual
 3. **Adaptive Problem-Solving**: Adjusts based on observations
 4. **Reproducible Process**: Actions can be repeated
 
-## Integration with CRPG
+## Navigation
 
-### Constraints Verification
-```markdown
-**Thought**: Must verify GPU memory constraint
-**Action**: Profile model memory usage
-**Observation**: Uses 7.2GB, within 8GB limit ✓
-```
-
-### Reward Optimization
-```markdown
-**Thought**: Seeking to maximize accuracy (reward)
-**Action**: Test data augmentation strategies
-**Observation**: MixUp improves accuracy by 2.1%
-```
-
-### Penalty Avoidance
-```markdown
-**Thought**: Must avoid overfitting (penalty)
-**Action**: Monitor train/val gap
-**Observation**: Gap increasing after epoch 50
-**Action**: Add dropout and early stopping
-```
-
-## Next Steps
-
-Now let's explore how to [combine these techniques](04-hybrid-techniques.md) for maximum effectiveness →
+[Previous: Chain of Thought](02-chain-of-thought.md) | [Up: Prompting Guide](README.md) | [Next: Hybrid Techniques](04-hybrid-techniques.md)

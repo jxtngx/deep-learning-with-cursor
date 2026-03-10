@@ -1,6 +1,6 @@
 ---
 name: User Story
-about: Create a user story following INVEST principles
+about: Create a user story
 title: '[STORY] '
 labels: 'story'
 assignees: ''
@@ -14,14 +14,6 @@ assignees: ''
 **As a** [role]
 **I want to** [goal/desire]
 **So that** [benefit/value]
-
-## INVEST Checklist
-- [ ] **Independent** - Can be developed separately from other stories
-- [ ] **Negotiable** - Details can be discussed and refined
-- [ ] **Valuable** - Delivers clear value to users/business
-- [ ] **Estimable** - Team can estimate the effort required
-- [ ] **Small** - Can be completed within one sprint
-- [ ] **Testable** - Has clear acceptance criteria
 
 ## Acceptance Criteria
 ```gherkin

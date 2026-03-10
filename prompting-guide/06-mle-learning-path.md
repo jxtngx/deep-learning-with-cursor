@@ -62,7 +62,7 @@ MLE: "Create a CNN for CIFAR-10, but with:
 ```
 
 ### Skills to Develop
-- Learn INVEST+CRPG framework deeply
+- Learn structured prompt engineering
 - Understand how prompt changes affect output
 - Start predicting what code will be generated
 - Build vocabulary of ML concepts

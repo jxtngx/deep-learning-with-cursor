@@ -1,0 +1,39 @@
+---
+description: Code changes must be small, incremental, and constrained
+alwaysApply: true
+---
+
+# Incremental Changes
+
+Code changes and new features must be:
+
+## Small and Chunked
+
+- One logical change per implementation step
+- Maximum ~100 lines changed per chunk
+- Each chunk should be independently testable
+
+## Not Verbose
+
+- No excessive comments explaining the obvious
+- No placeholder code "for future use"
+- No speculative abstractions
+
+## Constrained Authority
+
+The coding agent must NOT:
+
+- Refactor unrelated code "while we're here"
+- Add features not explicitly requested
+- Change architecture without approval
+- Modify files outside the stated scope
+
+## Process
+
+1. State what will be changed
+2. State what will NOT be changed
+3. Implement the minimal change
+4. Verify it works
+5. Stop and report
+
+Ask before expanding scope.

@@ -1,0 +1,33 @@
+---
+description: Plans must gather requirements before implementation
+alwaysApply: true
+---
+
+# Planning Requirements
+
+Before implementing any plan, gather these from the user:
+
+## Required Information
+
+1. **User Story**: "As a [role], I want [feature] so that [benefit]"
+2. **Definition of Done**: Specific, measurable acceptance criteria
+3. **Constraints**: Technical, time, scope, or resource limitations
+4. **Goal End State**: What does success look like?
+
+## Optional but Valuable
+
+- **Rewards**: What makes this a great implementation?
+- **Penalties**: What would make this a failed implementation?
+
+## Template Questions
+
+```
+Before I proceed, I need to understand:
+
+1. User Story: Can you describe this as "As a [role], I want [feature] so that [benefit]"?
+2. Definition of Done: What specific criteria indicate this is complete?
+3. Constraints: Are there any limitations I should know about?
+4. Goal End State: What does the ideal outcome look like?
+```
+
+Do not assume or infer these. Ask explicitly.

@@ -1,14 +1,14 @@
-# Chain of Thought Integration with INVEST+CRPG
+# Chain of Thought Prompting
 
 ## Overview
 
-Chain of Thought (CoT) prompting adds explicit reasoning steps to problem-solving. When combined with INVEST+CRPG, it creates a powerful framework where requirements are clear (INVEST), reasoning is transparent (CoT), and execution is optimized (CRPG).
+Chain of Thought (CoT) prompting adds explicit reasoning steps to problem-solving. When combined with structured requirements and clear task specifications, it creates a powerful framework where reasoning is transparent and execution is methodical.
 
 ## Human Analogy
 
 Think of CoT like "thinking aloud" during pair programming. When you explain your reasoning step-by-step to a colleague, you often catch mistakes, find better solutions, and make your thought process reviewable by others.
 
-## How CoT Enhances INVEST+CRPG
+## How CoT Enhances Problem Solving
 
 ### Without CoT
 ```
@@ -24,12 +24,12 @@ Request → Reasoning Steps → Validated Solution
 
 ```mermaid
 graph TD
-    A[INVEST Story] --> B[Identify Components]
+    A[Task Definition] --> B[Identify Components]
     B --> C[Step 1: Analyze Requirements]
     C --> D[Step 2: Design Architecture]
     D --> E[Step 3: Plan Implementation]
     E --> F[Step 4: Consider Constraints]
-    F --> G[Step 5: Optimize for Rewards]
+    F --> G[Step 5: Validate Solution]
     G --> H[Validated Solution]
 
     style C fill:#e1f5fe
@@ -58,15 +58,13 @@ Create a CNN for CIFAR-10 classification. Let's think step by step:
 5. What's our training strategy?
 ```
 
-## Integrating CoT with INVEST Stories
+## CoT Patterns for ML Tasks
 
 ### Pattern 1: Reasoning Within Constraints
 
 ```markdown
-## User Story
-As a researcher
-I want to achieve 95% accuracy on CIFAR-10
-So that I can publish competitive results
+## Task
+Achieve 95% accuracy on CIFAR-10 for publishable results
 
 ## Chain of Thought Process
 Let me work through this systematically:
@@ -149,30 +147,30 @@ Let's optimize this training:
 5. Success metrics: [how to measure improvement]
 ```
 
-## Combining CoT with CRPG
+## CoT for Constraint-Aware Reasoning
 
-### Enhanced CRPG with Reasoning
+### Applying Reasoning to Constraints and Goals
 
 ```markdown
-## CONSTRAINTS (with reasoning)
+## Constraints (with reasoning)
 - GPU Memory: 8GB
-  → Reasoning: Limits batch size to 128 for ResNet50
-  → Reasoning: Requires gradient accumulation for effective batch of 512
+  -> Reasoning: Limits batch size to 128 for ResNet50
+  -> Reasoning: Requires gradient accumulation for effective batch of 512
 
-## REWARDS (with reasoning)
+## Targets (with reasoning)
 - Accuracy > 95%
-  → Reasoning: Achievable with proper augmentation
-  → Reasoning: Requires at least 200 epochs training
+  -> Reasoning: Achievable with proper augmentation
+  -> Reasoning: Requires at least 200 epochs training
 
-## PENALTIES (with reasoning)
+## Risks (with reasoning)
 - Training time > 24 hours
-  → Reasoning: Use mixed precision to accelerate
-  → Reasoning: Optimize data loading pipeline
+  -> Reasoning: Use mixed precision to accelerate
+  -> Reasoning: Optimize data loading pipeline
 
-## GOAL STATE (with reasoning)
+## Success Criteria (with reasoning)
 - Reproducible results
-  → Reasoning: Fix all random seeds
-  → Reasoning: Document exact environment
+  -> Reasoning: Fix all random seeds
+  -> Reasoning: Document exact environment
 ```
 
 ## Real-World Application
@@ -180,10 +178,8 @@ Let's optimize this training:
 ### Complete Example: Vision Transformer Implementation
 
 ```markdown
-## User Story
-As a computer vision engineer
-I want to implement Vision Transformer for ImageNet
-So that I can explore attention-based architectures
+## Task
+Implement Vision Transformer for ImageNet to explore attention-based architectures
 
 ## Chain of Thought Process
 
@@ -232,9 +228,10 @@ Like a senior engineer mentoring a junior:
 
 1. **Make reasoning explicit**: Don't skip steps
 2. **Consider alternatives**: Show why you chose this path
-3. **Connect to requirements**: Link reasoning back to INVEST story
+3. **Connect to requirements**: Link reasoning back to the task specification
 4. **Validate assumptions**: Check reasoning against constraints
 
-## Next Steps
+## Navigation
 
-With reasoning made explicit through CoT, we can now add [action capabilities with ReAct](03-react-framework.md) →
+- Previous: [Prompting Guide README](README.md)
+- Next: [ReAct Framework](03-react-framework.md)

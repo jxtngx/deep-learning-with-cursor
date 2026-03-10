@@ -1,0 +1,45 @@
+---
+description: Write proper tests in tests/, not adhoc scripts
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Proper Testing
+
+When code changes require tests:
+
+## Do
+
+- Write tests in `tests/` directory
+- Follow existing test structure
+- Use pytest conventions
+- Name files `test_*.py`
+- Name functions `test_*`
+
+## Do Not
+
+- Create adhoc test scripts in project root
+- Write temporary `check_*.py` files
+- Create `verify_*.py` throwaway scripts
+- Add test code to `if __name__ == "__main__"` blocks
+
+## Test Location
+
+```
+tests/
+  test_<module>.py      # Unit tests
+  test_integration.py   # Integration tests
+  conftest.py           # Shared fixtures
+```
+
+## Example
+
+```python
+# tests/test_codec.py
+import pytest
+from ib_interface.protobuf.codec import ProtobufCodec
+
+def test_encode_decode_roundtrip():
+    # Test implementation
+    pass
+```

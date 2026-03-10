@@ -10,7 +10,7 @@ An Architecture Decision Record captures an important architectural decision mad
 
 | ADR | Title | Status | Date |
 |-----|-------|--------|------|
-| [ADR-001](001-agile-methodology.md) | Adopt Agile Methodology with INVEST and CRPG | Accepted | 2025-01-26 |
+| [ADR-001](001-agile-methodology.md) | Adopt Agile Methodology | Accepted | 2025-01-26 |
 
 ## Creating a New ADR
 

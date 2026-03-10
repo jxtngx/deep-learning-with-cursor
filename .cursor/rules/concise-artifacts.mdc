@@ -1,0 +1,30 @@
+---
+description: Keep plans, rules, subagents, commands, and hooks concise with architecture diagrams
+alwaysApply: true
+---
+
+# Concise Artifacts
+
+Plans, rules, subagents, commands, and hooks files must be:
+
+- **Concise**: No verbose explanations or filler content
+- **Code-free**: Do not implement code in these files
+- **Architecture-focused**: Use mermaid diagrams for context
+
+## Mermaid for Architecture
+
+```mermaid
+graph TD
+    A[Component] --> B[Dependency]
+    B --> C[Output]
+```
+
+## What Belongs Where
+
+| Artifact | Purpose | Code? |
+|----------|---------|-------|
+| Plans | Strategy, steps, questions | No |
+| Rules | Standards, patterns | Examples only |
+| Subagents | Task delegation | No |
+| Commands | CLI invocations | No |
+| Hooks | Lifecycle triggers | No |

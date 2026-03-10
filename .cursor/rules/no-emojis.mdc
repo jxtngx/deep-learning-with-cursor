@@ -1,0 +1,27 @@
+---
+description: Never use emojis anywhere in the codebase
+alwaysApply: true
+---
+
+# No Emojis
+
+Do not use emojis anywhere:
+
+- Source code
+- Docstrings
+- Comments
+- Markdown files
+- Documentation
+- Logging messages
+- Error messages
+- Commit messages
+- Test output
+
+Use plain text indicators instead:
+
+| Instead of | Use |
+|------------|-----|
+| Checkmark emoji | `[x]` or `PASS` |
+| X emoji | `[ ]` or `FAIL` |
+| Warning emoji | `WARNING:` |
+| Fire emoji | (nothing, just describe the issue) |
