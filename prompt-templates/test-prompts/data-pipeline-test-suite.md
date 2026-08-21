@@ -2,7 +2,7 @@
 
 # Data Pipeline Test Suite
 
-@agent-TestArchitect I need comprehensive tests for a data pipeline that will handle image datasets with augmentations. The tests should verify DataLoader functionality, transformation pipelines, batch collation, and dataset iteration. Please write tests using torch.testing utilities that check tensor shapes after transforms, data type preservation, augmentation reproducibility with seeds, proper handling of edge cases (empty batches, single samples), and memory efficiency. Tests should fail initially and guide the implementation of create_dataloaders(), get_transforms(), and HFDatasetWrapper classes.
+@agent-data-engineer I need comprehensive tests for a data pipeline that will handle image datasets with augmentations. The tests should verify DataLoader functionality, transformation pipelines, batch collation, and dataset iteration. Please write tests using torch.testing utilities that check tensor shapes after transforms, data type preservation, augmentation reproducibility with seeds, proper handling of edge cases (empty batches, single samples), and memory efficiency. Tests should fail initially and guide the implementation of create_dataloaders(), get_transforms(), and HFDatasetWrapper classes.
 
 ## Requirements
 

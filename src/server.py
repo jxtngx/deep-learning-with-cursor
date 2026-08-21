@@ -53,8 +53,4 @@ Serving optimizations:
 - GPU memory pooling and allocation
 - Caching strategies for repeated queries
 - Load balancing across model replicas
-
-Agent ownership:
-- CloudEngineer: API development and cloud deployment
-- InterfaceDesigner: Web interface and visualization
 """

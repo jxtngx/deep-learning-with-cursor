@@ -39,5 +39,5 @@ Integration points:
 - Calls compute.py for resource management
 
 Agent ownership:
-- RunnerOrchestrator: CLI orchestration and pipeline coordination
+- ml-engineer: CLI orchestration and pipeline coordination
 """

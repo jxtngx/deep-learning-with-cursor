@@ -47,6 +47,5 @@ Optimization features:
 - Warm-up and cosine annealing schedules
 
 Agent ownership:
-- TrainingOrchestrator: Training loop implementation and optimization
-- MetricsArchitect: Evaluation metrics and loss functions
+- ml-engineer: training loops, metrics, and loss functions
 """

@@ -43,6 +43,5 @@ Integration points:
 - Custom CUDA kernels for optimized operations
 
 Agent ownership:
-- NetworkArchitect: Custom architecture design and implementation
-- ModelArchitect: HuggingFace model selection and configuration
+- ml-engineer: custom architectures and HuggingFace model selection
 """

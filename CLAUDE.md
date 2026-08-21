@@ -1,39 +1,45 @@
 <!--
 Copyright 2025 jxtngx
 Licensed under Apache 2.0
-Original: https://github.com/jxtngx/claude-code-pytorch
 -->
 
-# Claude Code Agent Router
+# Agent Router
 
-## Purpose
-This document serves as a routing guide for Claude Code, directing requests to specialized agents based on task requirements. Each agent has deep expertise in their domain and collaborates with others to deliver comprehensive solutions.
+Route ML/DL work to the four specialists in `.cursor/agents/`.
 
-## Agent Performance Directives
+## Team
+
+| Agent | Owns |
+|-------|------|
+| [chief-architect](.cursor/agents/chief-architect.md) | Pipeline topology, tech approval, routing, TDD gate |
+| [research-scientist](.cursor/agents/research-scientist.md) | Methods, baselines, evaluation criteria |
+| [data-engineer](.cursor/agents/data-engineer.md) | `src/data.py` |
+| [ml-engineer](.cursor/agents/ml-engineer.md) | `src/network.py`, `src/trainer.py`, `src/runner.py`, `src/compute.py` |
+
+## Routing
+
+- Architecture or unclear scope: chief-architect
+- Method, baseline, or metric choice: research-scientist
+- Datasets, loaders, transforms: data-engineer
+- Models, training, metrics implementation, runner, GPU: ml-engineer
+
+Use `@agent-chief-architect`, `@agent-research-scientist`, `@agent-data-engineer`, or `@agent-ml-engineer`.
+
+## Directives
 
 ### Penalties
+
 - including code examples in agent files
 - using emojis
-- ignoring TDD principles
+- ignoring TDD
 - verbose explanations
-- code that does not follow the pytorch style set forth in the [contributing guide](https://github.com/pytorch/pytorch/wiki/The-Ultimate-Guide-to-PyTorch-Contributions) and [philosophy](https://docs.pytorch.org/docs/stable/community/design.html)
-- adding AWS services outside of EC2, S3, SageMaker, and Bedrock without explicit approval from CloudEngineer or the Human in the Loop
-- ignoring cost efficiency in AWS usage
-- ignoring security best practices in AWS usage
-- ignoring maintainability and readability in code
-- ignoring performance and scalability in code
-- ignoring testability in code
-- ignoring documentation and comments in code
-- ignoring collaboration and communication with other agents
+- code that does not follow the [PyTorch contributing guide](https://github.com/pytorch/pytorch/wiki/The-Ultimate-Guide-to-PyTorch-Contributions) and [design philosophy](https://docs.pytorch.org/docs/stable/community/design.html)
+- adding AWS services outside of EC2, S3, SageMaker, and Bedrock without Chief Architect or user approval
+- ignoring cost, security, maintainability, performance, testability, or documentation
 
 ### Rewards
-- beating project deadlines
-- achieving high test coverage
-- high code quality scores and fast diff authoring time, measured by ruff, black, mypy, and git metrics; code quality is weighted most heavily
-- clear, concise documentation and comments
-- cost savings in AWS usage
-- successful local testing with LocalStackEmulator before AWS deployment
 
-## Agent Directory and Routing Guidelines
-
-see [team.md](team.md) for full bios and expertise areas and consult with [Supervisor](.claude/agents/supervisor.md) to coordinate multi-agent tasks
+- high code quality (ruff, black, mypy)
+- concise docs
+- test-first ML/DL changes
+- cost-aware AWS use on the approved services

@@ -1,6 +1,6 @@
 # Training Loop Test Suite
 
-@agent-TestArchitect I need comprehensive tests for a distributed training loop implementation. Write tests that verify loss decreases over iterations, gradients are computed correctly, optimizer steps update parameters, learning rate scheduling works as expected, and checkpointing preserves training state. Use torch.testing to validate tensor operations, torch.distributed tests for multi-GPU scenarios, and performance benchmarks using torch.utils.benchmark. Include tests for gradient accumulation, mixed precision training, and early stopping logic.
+@agent-ml-engineer I need comprehensive tests for a distributed training loop implementation. Write tests that verify loss decreases over iterations, gradients are computed correctly, optimizer steps update parameters, learning rate scheduling works as expected, and checkpointing preserves training state. Use torch.testing to validate tensor operations, torch.distributed tests for multi-GPU scenarios, and performance benchmarks using torch.utils.benchmark. Include tests for gradient accumulation, mixed precision training, and early stopping logic.
 
 ## Requirements
 

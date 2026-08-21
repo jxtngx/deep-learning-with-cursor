@@ -103,15 +103,14 @@ When adapting templates:
 
 ## Agent Routing
 
-Templates automatically route to appropriate agents:
+Templates route to the ML/DL team:
 
-- **@agent-NetworkArchitect**: For custom model architectures
-- **@agent-TestArchitect**: For TDD workflows
-- **@agent-DatasetCurator**: For dataset selection
-- **@agent-TrainingOrchestrator**: For training pipelines
-- **@agent-InterfaceDesigner**: For UI/UX tasks
+- **@agent-chief-architect**: Pipeline topology and tech approval
+- **@agent-research-scientist**: Methods, baselines, evaluation criteria
+- **@agent-data-engineer**: Datasets, loaders, transforms
+- **@agent-ml-engineer**: Models, training, metrics, runner, compute
 
-Agents not explicitly mentioned are selected automatically based on task requirements.
+Interface prompt templates are task text only and are not routed to a team member.
 
 ## Best Practices
 
@@ -141,7 +140,7 @@ Agents not explicitly mentioned are selected automatically based on task require
 ### Test-First Development
 ```bash
 # 1. Start with a test-prompts/ template
-# 2. Let Test Developer write tests first
+# 2. Route data tests to @agent-data-engineer and model/train tests to @agent-ml-engineer
 # 3. Then use vision/nlp/multimodal prompts for implementation
 # 4. Ensure all tests pass before deployment
 ```

@@ -1,6 +1,6 @@
 # Regression Test Suite
 
-@agent-TestArchitect I need regression test suite to prevent breaking changes in ML components. Write tests using torch.testing that capture current behavior baselines, validate backward compatibility, check for performance regressions, and ensure reproducibility across versions. Include golden tests for model outputs, compatibility tests for saved checkpoints, and performance benchmarks with acceptable variance thresholds. Use torch.testing.assert_close() with appropriate tolerances for numerical stability.
+@agent-ml-engineer I need regression test suite to prevent breaking changes in ML components. Write tests using torch.testing that capture current behavior baselines, validate backward compatibility, check for performance regressions, and ensure reproducibility across versions. Include golden tests for model outputs, compatibility tests for saved checkpoints, and performance benchmarks with acceptable variance thresholds. Use torch.testing.assert_close() with appropriate tolerances for numerical stability.
 
 ## Requirements
 

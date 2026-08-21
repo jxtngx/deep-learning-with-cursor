@@ -5,7 +5,7 @@
 
 A modular, multi-agent based system for PyTorch, Hugging Face, and AWS, powered by Cursor's AI-assisted development.
 
-> **Note**: This project uses specialized agent definitions in `.cursor/agents/` coordinated by the Chief Fullstack Architect.
+> **Note**: This project uses specialized agent definitions in `.cursor/agents/` coordinated by the Chief Architect.
 
 ## Philosophy
 
@@ -58,111 +58,17 @@ These skills transfer directly to building production agent applications, making
 ### Agent Team Structure
 
 ```mermaid
-graph TB
-    %% Strategy Team
-    Supervisor["Supervisor - Project Coordination"]
-    DomainExpert["DomainExpert - Domain Knowledge"]
-
-    %% Data Pipeline Team
-    DatasetCurator["DatasetCurator - HF Datasets"]
-    DataEngineer["DataEngineer - DataLoaders"]
-    TransformSpecialist["TransformSpecialist - Augmentation"]
-
-    %% Model Architecture Team
-    ModelArchitect["ModelArchitect - HF Models"]
-    NetworkArchitect["NetworkArchitect - Custom Networks"]
-
-    %% Training & Evaluation Team
-    TrainingOrchestrator["TrainingOrchestrator - Training Loops"]
-    MetricsArchitect["MetricsArchitect - Evaluation"]
-    RunnerOrchestrator["RunnerOrchestrator - Pipelines"]
-
-    %% Infrastructure Team
-    CloudEngineer["CloudEngineer - AWS Services"]
-    ComputeOrchestrator["ComputeOrchestrator - EC2/GPU"]
-    LocalStackEmulator["LocalStackEmulator - Local Testing"]
-
-    %% Quality & Interface Team
-    TestArchitect["TestArchitect - TDD"]
-    InterfaceDesigner["InterfaceDesigner - Web UI"]
-
-    %% Team Groupings
-    subgraph Strategy
-        Supervisor
-        DomainExpert
-    end
-
-    subgraph DataPipeline[Data Pipeline]
-        DatasetCurator
-        DataEngineer
-        TransformSpecialist
-    end
-
-    subgraph ModelArchitecture[Model Architecture]
-        ModelArchitect
-        NetworkArchitect
-    end
-
-    subgraph TrainingEvaluation[Training & Evaluation]
-        TrainingOrchestrator
-        MetricsArchitect
-        RunnerOrchestrator
-    end
-
-    subgraph Infrastructure
-        CloudEngineer
-        ComputeOrchestrator
-        LocalStackEmulator
-    end
-
-    subgraph QualityInterface[Quality & Interface]
-        TestArchitect
-        InterfaceDesigner
-    end
-
-    %% Primary Relationships
-    Supervisor --> DatasetCurator
-    Supervisor --> ModelArchitect
-    Supervisor --> CloudEngineer
-
-    DomainExpert --> DatasetCurator
-    DomainExpert --> MetricsArchitect
-
-    DatasetCurator --> DataEngineer
-    DataEngineer --> TransformSpecialist
-    DataEngineer --> TrainingOrchestrator
-
-    ModelArchitect --> NetworkArchitect
-    NetworkArchitect --> TrainingOrchestrator
-
-    TrainingOrchestrator --> MetricsArchitect
-    TrainingOrchestrator --> RunnerOrchestrator
-
-    CloudEngineer --> ComputeOrchestrator
-    CloudEngineer --> InterfaceDesigner
-    LocalStackEmulator --> CloudEngineer
-
-    TestArchitect -.-> DataEngineer
-    TestArchitect -.-> NetworkArchitect
-    TestArchitect -.-> TrainingOrchestrator
-    TestArchitect -.-> CloudEngineer
-
-    RunnerOrchestrator --> ComputeOrchestrator
-
-    %% Styling
-    classDef strategyStyle fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000
-    classDef dataStyle fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px,color:#000
-    classDef modelStyle fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000
-    classDef trainingStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
-    classDef infraStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
-    classDef qualityStyle fill:#f1f8e9,stroke:#558b2f,stroke-width:2px,color:#000
-
-    class Supervisor,DomainExpert strategyStyle
-    class DatasetCurator,DataEngineer,TransformSpecialist dataStyle
-    class ModelArchitect,NetworkArchitect modelStyle
-    class TrainingOrchestrator,MetricsArchitect,RunnerOrchestrator trainingStyle
-    class CloudEngineer,ComputeOrchestrator,LocalStackEmulator infraStyle
-    class TestArchitect,InterfaceDesigner qualityStyle
+graph TD
+    CA[chief-architect] --> RS[research-scientist]
+    CA --> DE[data-engineer]
+    CA --> MLE[ml-engineer]
+    RS -.advises.-> DE
+    RS -.advises.-> MLE
+    DE --> Data["src/data.py"]
+    MLE --> Network["src/network.py"]
+    MLE --> Trainer["src/trainer.py"]
+    MLE --> Runner["src/runner.py"]
+    MLE --> Compute["src/compute.py"]
 ```
 
 ### Workflow
@@ -228,10 +134,7 @@ In Cursor, you can directly invoke specialized agents using `@agent-[NAME]` or l
 #### Direct Agent Routing
 ```bash
 # Explicitly call a specific agent using @agent-[NAME]
-$ "@agent-NetworkArchitect implement a custom attention mechanism for video understanding"
-
-# Agent responds with expertise
-NetworkArchitect: I'll design a custom spatio-temporal attention module...
+$ "@agent-ml-engineer implement a custom attention mechanism for video understanding"
 ```
 
 #### Automatic Routing
@@ -239,11 +142,11 @@ NetworkArchitect: I'll design a custom spatio-temporal attention module...
 # Describe your task and the router directs to appropriate agents
 $ "I need to fine-tune a BERT model on my custom dataset with limited GPU memory"
 
-# The agent system automatically engages relevant agents
-Supervisor: Let me establish your constraints...
-TestArchitect: Writing tests for your fine-tuning pipeline...
-ModelArchitect: Selecting optimal BERT variant for your memory constraints...
-DataEngineer: Configuring efficient data loading...
+# The agent system engages the ML/DL team
+chief-architect: Route method choice to research-scientist, data to data-engineer, training to ml-engineer
+research-scientist: Recommend baseline, loss, and memory-aware metrics
+data-engineer: Configure the DataLoader contract
+ml-engineer: Implement fine-tuning tests, then the training loop
 ```
 
 ### Common Workflows
@@ -252,63 +155,37 @@ DataEngineer: Configuring efficient data loading...
 ```bash
 $ "I want to build an image classification system for medical X-rays"
 
-# Supervisor coordinates the team
-Supervisor: Analyzing requirements...
-DomainExpert: Medical imaging requires specific preprocessing...
-DatasetCurator: Searching for relevant medical datasets...
-TestArchitect: Writing comprehensive test suite first...
-NetworkArchitect: Designing architecture for medical images...
+chief-architect: Route research, data, and training
+research-scientist: Formulate the task, baseline, and metrics
+data-engineer: Select a dataset and loader contract
+ml-engineer: Write tests, then the model and trainer
 ```
 
 #### Fine-tuning with Limited Resources
 ```bash
 $ "Fine-tune Llama-2-7B on my customer support dataset using QLoRA"
 
-# Specialized agents collaborate
-ModelArchitect: Configuring Llama-2-7B with 4-bit quantization...
-DataEngineer: Setting up efficient data pipeline...
-TrainingOrchestrator: Implementing QLoRA with gradient checkpointing...
-MetricsArchitect: Establishing evaluation metrics...
-```
-
-#### Local Testing Before Deployment
-```bash
-$ "Test my model API locally before deploying to AWS"
-
-# LocalStackEmulator coordinates with CloudEngineer
-LocalStackEmulator: Starting local AWS environment...
-CloudEngineer: Configuring API endpoints for local testing...
-TestArchitect: Running integration tests against LocalStack...
+research-scientist: Recommend QLoRA baseline and eval thresholds
+data-engineer: Set up the DataLoader
+ml-engineer: Implement QLoRA training and metrics
 ```
 
 #### Creating Test-Driven ML Code
 ```bash
 $ "Write tests for a vision transformer training pipeline"
 
-# TestArchitect leads TDD workflow
-TestArchitect: Creating tests that will fail initially...
-  - test_model_initialization()
-  - test_forward_pass_shapes()
-  - test_loss_computation()
-  - test_optimizer_step()
-NetworkArchitect: Implementing ViT to pass your tests...
+ml-engineer: Write failing tests, then implement the ViT and trainer
 ```
 
 ### Multi-Agent Collaboration Example
 
 ```bash
-$ "Deploy a real-time object detection API with <50ms latency"
+$ "Train a real-time object detector with <50ms GPU latency"
 
-# Watch agents collaborate
-Supervisor: Establishing latency requirements...
-TestArchitect: Writing performance benchmarks...
-ModelArchitect: Selecting YOLOv8n for speed...
-ComputeOrchestrator: Recommending g5.xlarge instance...
-CloudEngineer: Implementing FastAPI with async inference...
-LocalStackEmulator: Testing locally first...
-InterfaceDesigner: Creating monitoring dashboard...
-
-# Result: Complete deployment pipeline with tests
+chief-architect: Approve topology and latency budget
+research-scientist: Recommend detector family and metrics
+data-engineer: Build detection loaders and transforms
+ml-engineer: Implement model, training, and latency tests
 ```
 
 ### Tips for Effective Agent Use
@@ -316,9 +193,8 @@ InterfaceDesigner: Creating monitoring dashboard...
 1. **Be Specific**: Include constraints, metrics, and requirements
 2. **Direct Invocation**: Use `@agent-[NAME]` to call specific agents
 3. **Use Templates**: Copy prompts from `prompt-templates/` for consistency
-4. **Test First**: Let TestArchitect write tests before implementation
-5. **Local First**: Use LocalStackEmulator before AWS deployment
-6. **Trust Routing**: The agent system knows which agents to engage when not specified
+4. **Test First**: data-engineer and ml-engineer write tests before implementation
+5. **Trust Routing**: chief-architect routes when the owner is unclear
 
 ### Agent Coordination Patterns
 
@@ -326,11 +202,8 @@ InterfaceDesigner: Creating monitoring dashboard...
 # Iterative workflow
 $ "Test → Data → Model → Training → Deploy (continuous iteration)"
 
-# Parallel execution
-$ "Run tests AND start LocalStack AND prepare dataset"
-
 # Specific expertise request
-$ "@agent-MetricsArchitect design custom metrics for video quality assessment"
+$ "@agent-research-scientist design custom metrics for video quality assessment"
 ```
 
 ## Design Principles
@@ -341,7 +214,7 @@ The `src/` directory contains standalone modules that can be run directly withou
 ### Agile Development Process
 - **Architecture Decision Records**: Documented technical decisions in `docs/adr/`
 - **Sprint Tracking**: Comprehensive sprint planning and retrospectives in `docs/sprints/`
-- **Test-Driven Development**: TestArchitect enforces TDD practices
+- **Test-Driven Development**: Implementers write tests before changing their modules
 - **Continuous Integration**: Built into agent collaboration workflows
 
 ### Modern Tooling

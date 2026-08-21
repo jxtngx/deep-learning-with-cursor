@@ -38,5 +38,5 @@ Core components:
 - manage_spot_fleet(): Handle spot instance requests and interruptions
 
 Agent ownership:
-- ComputeOrchestrator: EC2 resource management and optimization
+- ml-engineer: EC2/GPU resource management and optimization
 """

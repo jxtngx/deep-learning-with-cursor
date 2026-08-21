@@ -42,7 +42,5 @@ Integration points:
 - Provides reproducible data splits with configurable seeds
 
 Agent ownership:
-- DatasetCurator: Dataset discovery and selection
-- DataEngineer: DataLoader optimization and pipeline engineering
-- TransformSpecialist: Augmentation and preprocessing strategies
+- data-engineer: datasets, loaders, transforms, quality
 """

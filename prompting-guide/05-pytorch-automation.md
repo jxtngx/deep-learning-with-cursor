@@ -87,9 +87,9 @@ class PatternMatcher:
 
 ### Current: Explicit Agent Calls
 ```markdown
-@agent-DatasetCurator find image datasets
-@agent-NetworkArchitect design CNN
-@agent-TrainingOrchestrator implement training
+@agent-data-engineer find image datasets
+@agent-ml-engineer design CNN
+@agent-ml-engineer implement training
 ```
 
 ### Future: Automatic Routing

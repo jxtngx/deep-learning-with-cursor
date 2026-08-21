@@ -1,6 +1,6 @@
 # API Endpoint Test Suite
 
-@agent-TestArchitect I need test suite for REST API endpoints serving ML models. Write tests that validate request/response formats, model loading and caching, batch inference correctness, error handling for malformed inputs, and latency requirements. Use torch.testing for tensor validation in responses, test concurrent requests, memory usage under load, and graceful degradation. Include tests for different input modalities (images, text, tabular) and output format validation (JSON, protobuf).
+@agent-ml-engineer I need test suite for REST API endpoints serving ML models. Write tests that validate request/response formats, model loading and caching, batch inference correctness, error handling for malformed inputs, and latency requirements. Use torch.testing for tensor validation in responses, test concurrent requests, memory usage under load, and graceful degradation. Include tests for different input modalities (images, text, tabular) and output format validation (JSON, protobuf).
 
 ## Requirements
 

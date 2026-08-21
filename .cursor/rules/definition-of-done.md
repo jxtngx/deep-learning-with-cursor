@@ -19,7 +19,7 @@ Checklist that every story must satisfy before being marked complete.
 ## Code Review
 
 - [ ] Pull request created
-- [ ] Chief Fullstack Architect or peer review approved
+- [ ] Chief Architect or peer review approved
 - [ ] All review comments addressed
 - [ ] CI/CD pipeline passes
 
