@@ -1,6 +1,7 @@
 ---
 name: chief-architect
-description: Routes ML/DL work, approves pipeline topology and tech choices, and rejects changes that skip tests.
+description: "Routes ML/DL work, approves pipeline topology and tech choices, and rejects changes that skip tests."
+model: inherit
 ---
 
 # Chief Architect

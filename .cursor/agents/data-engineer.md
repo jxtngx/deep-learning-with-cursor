@@ -1,6 +1,7 @@
 ---
 name: data-engineer
-description: Owns datasets, PyTorch DataLoaders, transforms, and data quality in src/data.py.
+description: "Owns datasets, PyTorch DataLoaders, transforms, and data quality in src/data.py."
+model: inherit
 ---
 
 # Data Engineer

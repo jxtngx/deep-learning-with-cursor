@@ -1,6 +1,7 @@
 ---
 name: research-scientist
-description: Formulates ML/DL problems, selects methods and baselines, and defines evaluation criteria. Does not implement pipelines.
+description: "Formulates ML/DL problems, selects methods and baselines, and defines evaluation criteria. Does not implement pipelines."
+model: inherit
 ---
 
 # Research Scientist

@@ -1,6 +1,7 @@
 ---
 name: ml-engineer
-description: Implements models, training, metrics, experiment runners, and GPU/compute for ML/DL work.
+description: "Implements models, training, metrics, experiment runners, and GPU/compute for ML/DL work."
+model: inherit
 ---
 
 # ML Engineer
